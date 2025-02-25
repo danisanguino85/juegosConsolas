@@ -6,7 +6,7 @@
 ✅ LocalStorage (para que los personajes se guarden y no se pierdan cuando recargues la página).
 
 📝 Lo que tienes que hacer
-1️⃣ Crea una página web con dos campo de texto donde el usuario pueda escribir el nombre de su personaje y el videojuego al que pertenece.
+1️⃣ Crea una página web con dos campos de texto donde el usuario pueda escribir el nombre de su personaje y el videojuego al que pertenece.
 2️⃣ Añade un botón "Agregar" que, cuando se haga clic, guarde el personaje en una lista. {nombre: Mario, juego: SuperMarioBros}
 3️⃣ Muestra la lista de personajes en la misma pantalla (cada uno con un botón "Eliminar" al lado).
 4️⃣ Guarda los personajes en el LocalStorage, así no desaparecen cuando se cierre la página. Para probar que funciona deberas cerrar la pantalla del navegador y comprobar que los personajes almacenados siguen ahi.
