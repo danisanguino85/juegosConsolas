@@ -6,52 +6,74 @@
 
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+    background-image: url(./image.png);
 }
 
 input:last-child {
-    background-color: rgb(245, 3, 3);
-    padding: 5px;
+    background-color: rgb(79, 69, 2);
+    border-radius: 20px;
     color: white;
     cursor: pointer;
-    border: 1px solid white;
     font-weight: bolder;
-    box-shadow: 3px 3px 3px rgb(157, 3, 234);
+    box-shadow: 3px 3px 3px rgb(42, 41, 42);
+    padding: 5px;
+}
+
+form {
+    padding: 20px;
 }
 
 input {
-
     padding: 5px;
     width: 200px;
+    border: 1px solid black;
+    border-radius: 20px;
 }
 
-.form {
-    display: flex;
+header {
+
     background-color: black;
-    padding: 10px 20px;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 6px solid rgb(157, 3, 234);
-    box-shadow: 3px 3px 3px red;
+    padding: 15px;
+    box-shadow: 0px 5px 5px #666;
+}
+
+h1 {
+    text-align: center;
+    font-size: 200%;
+    color: white;
+    letter-spacing: 20px;
+    word-spacing: 15px;
 
 }
 
 h2 {
-    text-align: right;
-    margin: 10px 20px;
-    font-size: 200%;
-    color: white;
+    font-size: 150%;
 }
 
-article {
+.list {
+    background-color: rgb(242, 242, 229);
+    height: 70vh;
     padding: 20px;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
 
     ul {
         padding: 10px;
+
+
     }
 
     li {
         list-style: none;
         padding: 5px;
     }
+
+}
+
+.button2 {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
 }
