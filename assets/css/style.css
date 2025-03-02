@@ -10,11 +10,6 @@ img {
     height: auto;
 }
 
-/*FUENTES*/
-
-@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Honk:SHLN@31.2&display=swap');
-
 .sigmar-regular {
     font-family: "Sigmar", serif;
     font-weight: lighter;
@@ -42,6 +37,7 @@ img {
 body {
     background-image: url(../images/image.png);
     background-repeat: none;
+
 
 }
 
@@ -135,10 +131,10 @@ input {
 
 footer {
     background-color: black;
-    position: sticky;
     width: 100vw;
-    height: 80px;
-
+    height: 60px;
+    position: sticky;
+    bottom: 0;
 }
 
 #mario {
@@ -153,7 +149,7 @@ footer {
     position: absolute;
     height: 50px;
     width: 50px;
-    bottom: 20px;
+    bottom: 0;
     left: 10px;
 
 }

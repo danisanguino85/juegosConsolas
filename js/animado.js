@@ -11,11 +11,10 @@ function moverMario() {
 function moverPacman() {
 
     pacman.style.transition = '40s';
-    pacman.style.bottom = '20px';
     pacman.style.left = '1200px';
 }
 
 window.addEventListener('load', moverMario);
 window.addEventListener('load', moverPacman);
 
-//la idea era poder reutilizar la función pasando los segundos y px por parámetro pero en uno uso top y right y en otro bottom y left 
+//la idea era poder reutilizar la función pasando los segundos y px por parámetro pero en uno uso top y right y en otro  left 
