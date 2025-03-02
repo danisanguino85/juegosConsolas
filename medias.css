@@ -1,0 +1,36 @@
+@media(min-width:700px) {
+
+    #submit {
+        grid-column: 1 / 5;
+    }
+
+    input:nth-child(3) {
+        grid-column: 1 / 5;
+    }
+
+    .contenedor {
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    form.container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1004px) {
+    form.container {
+        display: flex;
+        justify-content: center;
+    }
+
+    input {
+        width: 300px;
+        margin-right: 10px;
+    }
+
+    .contenedor {
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+    }
+}

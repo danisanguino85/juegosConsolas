@@ -1,51 +1,73 @@
 const form = document.querySelector('form')
-const ul = document.querySelector('ul')
-const button2 = document.querySelector('button')
-const li = document.querySelector('li')
+const div = document.querySelector('.contenedor')
 
-const lista = []
+const article = document.querySelector('article')
 
-function printCharacter(character, domElement) {
-    const li = document.createElement('li')
-    const span = document.createElement('span')
-    span.textContent = character
-    li.style.display = 'flex'
-    li.style.justifyContent = 'space-between'
-    li.style.width = '200px'
-    const button = document.createElement('button')
-    const button2 = document.createElement('button')
-    button2.textContent = 'Delete'
-    button2.style.marginLeft = '10px'
-    button2.classList.add('button2')
-    button2.addEventListener('click', deleteCharacter)
-    li.append(span, button2)
 
-    domElement.appendChild(li)
+
+const lista = JSON.parse(localStorage.getItem('personaje')) || []
+
+lista.forEach(personaje => printCharacter(personaje.nombre, personaje.juego, personaje.nivel, div))
+
+
+function printCharacter(character, videojuego, characterDescription, domElement) {
+    console.log(character, videojuego, characterDescription, domElement)
+    domElement.innerHTML += ` <div class="card" style="width: 18rem;">
+    <button class="button2">X</button>
+    <div class="card-body" class="divArticulo">
+      <h5 class="card-title">${character.toUpperCase()}</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">${videojuego.toUpperCase()}</h6>
+      <p class="card-text">${characterDescription}</p>`
+    const button2 = domElement.querySelectorAll('.button2')
+    button2.forEach(button => button.addEventListener('click', deleteCharacter))
+
+
 }
 
 function deleteCharacter(event) {
-    const li = event.target.parentElement
-    li.remove()
+    const article = event.target.parentElement
+    article.remove()
 
 }
+//buscar el nombre el personaje coger la posicion y eliminarlo de la lista
+function guardarlocalstorage() {
+    localStorage.setItem('personaje', JSON.stringify(lista));
+}
+
 function getCharacter(event) {
     event.preventDefault()
     const personaje = event.target.personaje.value
     const videojuego = event.target.videojuego.value
-    const objeto = { nombre: personaje, juego: videojuego }
-    // Check if the character already exists in the list (Method 1)
-    const existe = lista.some(item => item.nombre.toLowerCase() === personaje.toLowerCase())
-    if (existe) {
-        alert('El personaje ya existe en la lista')
-        return
-    }
-    lista.push(objeto)
+    const characterDescription = event.target.description.value
+    const objeto = { nombre: personaje, juego: videojuego, nivel: characterDescription }
 
-    //localStorage.setItem('personaje', JSON.stringify(lista))
+    const existe = lista.some(item => item.nombre.toLowerCase() === personaje.toLowerCase())
+
+
+    if (personaje === "" || videojuego === "") {
+        alert('Debes introducir un personaje y un videojuego')
+
+    }
+    else if (existe) {
+        alert('El personaje ya existe en la lista')
+
+    } else {
+
+        lista.push(objeto)
+
+        guardarlocalstorage(lista)
+
+
+
+        printCharacter(personaje, videojuego, characterDescription, div)
+
+        event.target.reset()
+
+    }
     console.log(lista)
-    const comprobacion = (personaje === "" || videojuego === "") ? alert('Debes introducir un personaje y un videojuego') : printCharacter(personaje, ul)
-    event.target.reset()
+
 }
+
 
 
 

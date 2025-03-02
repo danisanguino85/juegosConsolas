@@ -4,37 +4,17 @@
     box-sizing: border-box;
 }
 
+
+.container {
+    max-width: 1004px;
+    margin: 0 auto;
+
+}
+
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-image: url(./image.png);
-}
 
-input:last-child {
-    background-color: rgb(79, 69, 2);
-    border-radius: 20px;
-    color: white;
-    cursor: pointer;
-    font-weight: bolder;
-    box-shadow: 3px 3px 3px rgb(42, 41, 42);
-    padding: 5px;
-}
-
-form {
-    padding: 20px;
-}
-
-input {
-    padding: 5px;
-    width: 200px;
-    border: 1px solid black;
-    border-radius: 20px;
-}
-
-header {
-
-    background-color: black;
-    padding: 15px;
-    box-shadow: 0px 5px 5px #666;
 }
 
 h1 {
@@ -43,37 +23,101 @@ h1 {
     color: white;
     letter-spacing: 20px;
     word-spacing: 15px;
-
 }
 
-h2 {
-    font-size: 150%;
+header {
+    background-color: black;
+    padding: 20px;
+    box-shadow: 0px 5px 5px #666;
 }
 
-.list {
+
+form.container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+}
+
+input {
+    padding: 7px;
+    width: 90%;
+    max-width: 500px;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+#submit {
+    background-color: rgb(79, 69, 2);
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-weight: bolder;
+    box-shadow: 3px 3px 3px rgb(42, 41, 42);
+    padding: 5px;
+    transition: .2s;
+
+    &:hover {
+        background-color: transparent;
+        color: black;
+
+    }
+}
+
+.contenedor {
+    gap: 10px;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    justify-items: center;
+}
+
+.articulos {
     background-color: rgb(242, 242, 229);
-    height: 70vh;
+    height: 65vh;
     padding: 20px;
     border-bottom: 2px solid black;
     border-top: 2px solid black;
-
-    ul {
-        padding: 10px;
-
-
-    }
-
-    li {
-        list-style: none;
-        padding: 5px;
-    }
+    width: 100vw;
 
 }
 
 .button2 {
-    background-color: black;
+    background-color: red;
     color: white;
-    padding: 5px;
-    border: none;
+    font-weight: bolder;
     border-radius: 3px;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: center;
+}
+
+.card {
+    box-shadow: 2px 2px 2px black;
+}
+
+footer {
+    background-color: black;
+    height: 100px;
+    position: sticky;
+}
+
+#mario {
+    position: absolute;
+    display: block;
+    width: 100px;
+    height: auto;
+    top: 800px;
+    right: 1300px;
+}
+
+#pacman {
+    position: absolute;
+    width: 80px;
+    bottom: 20px;
+    left: 10px;
+
 }
