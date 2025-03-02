@@ -2,9 +2,10 @@ const pacman = document.querySelector('#pacman')
 const mario = document.querySelector('#mario')
 
 function moverMario() {
-    mario.style.transition = '10s';
+    mario.style.transition = '15s';
     mario.style.top = '10px';
     mario.style.right = '30px';
+
 }
 
 

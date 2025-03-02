@@ -14,21 +14,32 @@
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-image: url(./image.png);
+    background-repeat: none;
+
+
+
 
 }
 
 h1 {
     text-align: center;
-    font-size: 200%;
+    font-size: 150%;
     color: white;
     letter-spacing: 20px;
     word-spacing: 15px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 header {
     background-color: black;
     padding: 20px;
     box-shadow: 0px 5px 5px #666;
+    min-width: 400px;
+
+
+
 }
 
 
@@ -41,7 +52,7 @@ form.container {
 
 input {
     padding: 7px;
-    width: 90%;
+    width: 80%;
     max-width: 500px;
     border: 1px solid black;
     border-radius: 20px;
@@ -74,11 +85,15 @@ input {
 
 .articulos {
     background-color: rgb(242, 242, 229);
-    height: 65vh;
+    min-height: 65vh;
+    height: auto;
+    width: 100vw;
+    min-width: 400px;
     padding: 20px;
     border-bottom: 2px solid black;
     border-top: 2px solid black;
-    width: 100vw;
+
+
 
 }
 
@@ -101,22 +116,25 @@ input {
 
 footer {
     background-color: black;
-    height: 100px;
     position: sticky;
+    min-width: 400px;
+    height: 80px;
+
 }
 
 #mario {
     position: absolute;
     display: block;
-    width: 100px;
-    height: auto;
-    top: 800px;
-    right: 1300px;
+    width: 90px;
+
+    top: 5px;
+    right: 500px;
+    z-index: 0;
 }
 
 #pacman {
     position: absolute;
-    width: 80px;
+    height: 50px;
     bottom: 20px;
     left: 10px;
 

@@ -16,6 +16,11 @@
     form.container {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    #mario {
+        width: 60px;
+        right: 700px;
+    }
 }
 
 @media (min-width: 1004px) {
@@ -32,5 +37,9 @@
     .contenedor {
         grid-template-columns: 1fr 1fr 1fr;
         justify-items: center;
+    }
+
+    #mario {
+        right: 900px;
     }
 }
