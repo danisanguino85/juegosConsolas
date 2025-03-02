@@ -42,12 +42,6 @@ function deleteCharacter(event) {
 
 }
 
-
-
-
-
-
-
 function guardarlocalstorage() {
     localStorage.setItem('personaje', JSON.stringify(lista));
 
@@ -57,7 +51,7 @@ function getCharacter(event) {
     event.preventDefault()
     const personaje = event.target.personaje.value
     const videojuego = event.target.videojuego.value
-    const valoracion = event.target.description.value
+    const valoracion = event.target.valoracion.value
     const objeto = { nombre: personaje, juego: videojuego, nivel: valoracion }
 
     const existe = lista.some(item => item.nombre.toLowerCase() === personaje.toLowerCase())
