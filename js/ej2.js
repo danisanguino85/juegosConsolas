@@ -1,10 +1,20 @@
 const form = document.querySelector('form')
 const div = document.querySelector('.contenedor')
-
-
+const i = document.querySelector('i')
+const p = document.querySelector('p')
 const lista = JSON.parse(localStorage.getItem('personaje')) || []
 
 lista.forEach(personaje => printCharacter(personaje.nombre, personaje.juego, personaje.nivel, div))
+
+
+function star(valoracion) {
+    let stars = '';
+    for (let i = 0; i < valoracion; i++) {
+        stars += '<i class="fa-solid fa-star"></i>';
+    }
+    return stars;
+}
+
 
 
 function printCharacter(character, videojuego, valoracion, domElement) {
@@ -14,12 +24,13 @@ function printCharacter(character, videojuego, valoracion, domElement) {
     <div class="card-body" class="divArticulo">
       <h5 class="card-title">${character.toUpperCase()}</h5>
       <h6 class="card-subtitle mb-2 text-body-secondary">${videojuego.toUpperCase()}</h6>
-      <p class="card-text">${valoracion}</p></article>`
+      <p class="card-text">${star(valoracion)}</p></article>`
     const button2 = domElement.querySelectorAll('.button2')
     button2.forEach(button => button.addEventListener('click', deleteCharacter))
 
-
 }
+
+
 
 function deleteCharacter(event) {
     const article = event.target.parentElement;
@@ -77,7 +88,7 @@ function getCharacter(event) {
 }
 
 
-
+console.log(lista)
 
 
 

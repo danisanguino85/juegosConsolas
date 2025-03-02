@@ -153,3 +153,11 @@ footer {
     left: 10px;
 
 }
+
+p {
+    font-size: 150%;
+}
+
+i {
+    color: gold;
+}
