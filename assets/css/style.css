@@ -4,6 +4,34 @@
     box-sizing: border-box;
 }
 
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/*FUENTES*/
+
+@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Honk:SHLN@31.2&display=swap');
+
+.sigmar-regular {
+    font-family: "Sigmar", serif;
+    font-weight: lighter;
+    font-style: normal;
+}
+
+#honk-uniquifier {
+    font-family: "Honk", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "MORF" 15,
+        "SHLN" 31.2;
+}
+
+/*-----------------------------------------------*/
 
 .container {
     max-width: 1004px;
@@ -12,20 +40,17 @@
 }
 
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-image: url(./image.png);
+    background-image: url(../images/image.png);
     background-repeat: none;
-
-
-
 
 }
 
+
 h1 {
     text-align: center;
-    font-size: 150%;
+    font-size: 300%;
     color: white;
-    letter-spacing: 20px;
+    letter-spacing: 10px;
     word-spacing: 15px;
     margin: 0 auto;
     position: relative;
@@ -34,14 +59,10 @@ h1 {
 
 header {
     background-color: black;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0px 5px 5px #666;
     min-width: 400px;
-
-
-
 }
-
 
 form.container {
     padding: 20px;
@@ -77,7 +98,7 @@ input {
 }
 
 .contenedor {
-    gap: 10px;
+    gap: 20px;
     display: grid;
     grid-template-rows: repeat(1, 1fr);
     justify-items: center;
@@ -85,16 +106,14 @@ input {
 
 .articulos {
     background-color: rgb(242, 242, 229);
-    min-height: 65vh;
-    height: auto;
     width: 100vw;
     min-width: 400px;
-    padding: 20px;
+    padding: 50px;
     border-bottom: 2px solid black;
     border-top: 2px solid black;
-
-
-
+    font-size: 80%;
+    letter-spacing: 2px;
+    min-height: 60vh;
 }
 
 .button2 {
@@ -117,17 +136,15 @@ input {
 footer {
     background-color: black;
     position: sticky;
-    min-width: 400px;
+    width: 100vw;
     height: 80px;
 
 }
 
 #mario {
     position: absolute;
-    display: block;
-    width: 90px;
-
-    top: 5px;
+    width: 100px;
+    top: 15px;
     right: 500px;
     z-index: 0;
 }
@@ -135,6 +152,7 @@ footer {
 #pacman {
     position: absolute;
     height: 50px;
+    width: 50px;
     bottom: 20px;
     left: 10px;
 

@@ -1,23 +1,20 @@
 const form = document.querySelector('form')
 const div = document.querySelector('.contenedor')
 
-const article = document.querySelector('article')
-
-
 
 const lista = JSON.parse(localStorage.getItem('personaje')) || []
 
 lista.forEach(personaje => printCharacter(personaje.nombre, personaje.juego, personaje.nivel, div))
 
 
-function printCharacter(character, videojuego, characterDescription, domElement) {
-    console.log(character, videojuego, characterDescription, domElement)
-    domElement.innerHTML += ` <div class="card" style="width: 18rem;">
+function printCharacter(character, videojuego, valoracion, domElement) {
+
+    domElement.innerHTML += ` <article><div class="card" style="width: 18rem;">
     <button class="button2">X</button>
     <div class="card-body" class="divArticulo">
       <h5 class="card-title">${character.toUpperCase()}</h5>
       <h6 class="card-subtitle mb-2 text-body-secondary">${videojuego.toUpperCase()}</h6>
-      <p class="card-text">${characterDescription}</p>`
+      <p class="card-text">${valoracion}</p></article>`
     const button2 = domElement.querySelectorAll('.button2')
     button2.forEach(button => button.addEventListener('click', deleteCharacter))
 
@@ -25,21 +22,32 @@ function printCharacter(character, videojuego, characterDescription, domElement)
 }
 
 function deleteCharacter(event) {
-    const article = event.target.parentElement
-    article.remove()
+    const article = event.target.parentElement;
+    const characterName = article.querySelector('.card-title').textContent.toLowerCase();
+    const posicion = lista.findIndex(personaje => personaje.nombre.toLowerCase() === characterName);
+    lista.splice(posicion, 1);
+    guardarlocalstorage();
+    article.remove();
 
 }
-//buscar el nombre el personaje coger la posicion y eliminarlo de la lista
+
+
+
+
+
+
+
 function guardarlocalstorage() {
     localStorage.setItem('personaje', JSON.stringify(lista));
+
 }
 
 function getCharacter(event) {
     event.preventDefault()
     const personaje = event.target.personaje.value
     const videojuego = event.target.videojuego.value
-    const characterDescription = event.target.description.value
-    const objeto = { nombre: personaje, juego: videojuego, nivel: characterDescription }
+    const valoracion = event.target.description.value
+    const objeto = { nombre: personaje, juego: videojuego, nivel: valoracion }
 
     const existe = lista.some(item => item.nombre.toLowerCase() === personaje.toLowerCase())
 
@@ -53,18 +61,18 @@ function getCharacter(event) {
 
     } else {
 
-        lista.push(objeto)
+        lista.unshift(objeto)
 
         guardarlocalstorage(lista)
 
 
 
-        printCharacter(personaje, videojuego, characterDescription, div)
+        printCharacter(personaje, videojuego, valoracion, div)
 
         event.target.reset()
-
+        console.log(lista)
     }
-    console.log(lista)
+
 
 }
 
