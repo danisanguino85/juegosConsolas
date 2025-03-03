@@ -1,27 +1,36 @@
-@media(min-width:700px) {
+@media(min-width:768px) {
 
     #submit {
         grid-column: 1 / 5;
     }
 
-    input:nth-child(3) {
-        grid-column: 1 / 5;
+    #review {
+        grid-column: 1/5;
     }
 
     .contenedor {
         grid-template-columns: 1fr 1fr;
-
     }
 
-    form.container {
-        grid-template-columns: repeat(2, 1fr);
+    input {
+        padding: 5px 20px;
     }
 
     #mario {
         width: 60px;
         right: 700px;
     }
+
+    .animacion {
+        width: 900px;
+        left: -800px
+    }
+
+    span {
+        display: inline;
+    }
 }
+
 
 @media (min-width: 1004px) {
     form.container {
@@ -34,6 +43,10 @@
         margin-right: 10px;
     }
 
+    #rango {
+        width: 200px;
+    }
+
     .contenedor {
         grid-template-columns: 1fr 1fr 1fr;
         justify-items: center;
@@ -42,4 +55,17 @@
     #mario {
         right: 900px;
     }
+
+    .animacion {
+        width: 1350px;
+        left: -1100px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .animacion {
+        width: 1500px;
+        left: -1500px;
+    }
+
 }

@@ -2,9 +2,13 @@ const form = document.querySelector('form')
 const div = document.querySelector('.contenedor')
 const i = document.querySelector('i')
 const p = document.querySelector('p')
+
+
 const lista = JSON.parse(localStorage.getItem('personaje')) || []
 
-lista.forEach(personaje => printCharacter(personaje.nombre, personaje.juego, personaje.nivel, div))
+
+printAllCharacters()
+
 
 
 function star(valoracion) {
@@ -14,7 +18,6 @@ function star(valoracion) {
     }
     return stars;
 }
-
 
 
 function printCharacter(character, videojuego, valoracion, domElement) {
@@ -27,27 +30,28 @@ function printCharacter(character, videojuego, valoracion, domElement) {
       <p class="card-text">${star(valoracion)}</p></article>`
     const button2 = domElement.querySelectorAll('.button2')
     button2.forEach(button => button.addEventListener('click', deleteCharacter))
+}
+function printAllCharacters() {
+    div.innerHTML = '';
+    lista.forEach(personaje => printCharacter(personaje.nombre, personaje.juego, personaje.nivel, div))
+}
+function saveInLocalStorage() {
+    localStorage.setItem('personaje', JSON.stringify(lista));
 
 }
-
-
 
 function deleteCharacter(event) {
     const article = event.target.parentElement;
     const characterName = article.querySelector('.card-title').textContent.toLowerCase();
     const posicion = lista.findIndex(personaje => personaje.nombre.toLowerCase() === characterName);
     lista.splice(posicion, 1);
-    guardarlocalstorage();
-    article.remove();
-
+    saveInLocalStorage();
+    printAllCharacters()
 }
 
-function guardarlocalstorage() {
-    localStorage.setItem('personaje', JSON.stringify(lista));
 
-}
 
-function getCharacter(event) {
+function addNewCharacter(event) {
     event.preventDefault()
     const personaje = event.target.personaje.value
     const videojuego = event.target.videojuego.value
@@ -56,37 +60,26 @@ function getCharacter(event) {
 
     const existe = lista.some(item => item.nombre.toLowerCase() === personaje.toLowerCase())
 
-
     if (personaje === "" || videojuego === "") {
         alert('Debes introducir un personaje y un videojuego')
-
     }
     else if (existe) {
         alert('El personaje ya existe en la lista')
-
     } else {
 
-        lista.unshift(objeto)
-
-        guardarlocalstorage(lista)
-
-
-
+        lista.push(objeto)
+        saveInLocalStorage(lista)
         printCharacter(personaje, videojuego, valoracion, div)
-
         event.target.reset()
-        console.log(lista)
     }
-
-
 }
 
-
-console.log(lista)
-
+form.addEventListener('submit', addNewCharacter)
 
 
-form.addEventListener('submit', getCharacter)
+
+
+
 
 
 
