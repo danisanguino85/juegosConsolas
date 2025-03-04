@@ -1,19 +1,11 @@
 @media(min-width:768px) {
 
-    #submit {
-        grid-column: 1 / 5;
-    }
-
-    #review {
-        grid-column: 1/5;
+    input {
+        width: 50%;
     }
 
     .contenedor {
         grid-template-columns: 1fr 1fr;
-    }
-
-    input {
-        padding: 5px 20px;
     }
 
     #mario {
@@ -29,6 +21,16 @@
     span {
         display: inline;
     }
+
+    #submit {
+        max-width: 500px;
+        margin-top: 20px;
+    }
+
+    .moneda img {
+        top: 5px;
+    }
+
 }
 
 
@@ -38,9 +40,14 @@
         justify-content: center;
     }
 
+    #submit {
+        width: 200px;
+    }
+
     input {
         width: 300px;
         margin-right: 10px;
+        padding: 5px;
     }
 
     #rango {
@@ -60,6 +67,11 @@
         width: 1350px;
         left: -1100px;
     }
+
+    h1 {
+        font-size: 300%;
+    }
+
 }
 
 @media (min-width: 1200px) {
@@ -67,5 +79,4 @@
         width: 1500px;
         left: -1500px;
     }
-
 }

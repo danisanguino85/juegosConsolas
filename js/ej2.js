@@ -3,13 +3,9 @@ const div = document.querySelector('.contenedor')
 const i = document.querySelector('i')
 const p = document.querySelector('p')
 
-
 const lista = JSON.parse(localStorage.getItem('personaje')) || []
 
-
 printAllCharacters()
-
-
 
 function star(valoracion) {
     let stars = '';
@@ -48,8 +44,6 @@ function deleteCharacter(event) {
     saveInLocalStorage();
     printAllCharacters()
 }
-
-
 
 function addNewCharacter(event) {
     event.preventDefault()
