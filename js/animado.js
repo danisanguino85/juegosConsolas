@@ -21,6 +21,9 @@ function moverMario() {
 function moverPacman() {
     pacman.style.transition = '60s';
     pacman.style.left = '1300px';
+    setTimeout(() => {
+        pacman.style.left = '0px';
+    }, 60000);
 }
 sonido.addEventListener('click', coin)
 moneda.addEventListener('click', coin)
